@@ -1,0 +1,410 @@
+﻿<views:MvxWindow 
+             xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+             xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+             x:Class="iViewXExperimentCreator.Wpf.Views.SequenceEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:iViewXExperimentCreator.Wpf.Views"
+             mc:Ignorable="d" Height="600" Width="560"
+             ResizeMode="CanResizeWithGrip"
+             xmlns:con="clr-namespace:iViewXExperimentCreator.Wpf.Converters">
+
+
+    <views:MvxWindow.Background>
+        <SolidColorBrush Color="#17191a"/>
+    </views:MvxWindow.Background>
+    <views:MvxWindow.Resources>
+        <con:ThumbnailConverter x:Key="ImageConverter"/>
+    </views:MvxWindow.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition MaxWidth="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <DockPanel  Grid.Column="2"
+                    Grid.RowSpan="14"
+                    Grid.Row="0">
+            <!--Durch diesen Button öffnet sich ein Windows-File-Dialog zum Hinzufügen neuer Reize-->
+            <Button Content="Reiz(e) importieren" 
+                    DockPanel.Dock="Bottom"
+                    Click="Button_OpenStimulusImportFileDialog">
+                <Button.ToolTip>
+                    Öffnet den Windows-File-Dialog zum Hinzufügen neuer Bildreize.
+                </Button.ToolTip>
+            </Button>
+            <ScrollViewer DockPanel.Dock="Top">
+                <!--Liste der geladenen Reize-->
+                <DataGrid ItemsSource="{Binding Stimuli}" 
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="False"
+                          SelectedValue="{Binding SelectedStimulus}" 
+                          SelectionMode="Single"
+                          IsReadOnly="True"
+                          HeadersVisibility="Column"
+                          x:Name="stimList">
+                    <DataGrid.Columns>
+                        <!-- Bild des Reizes -->
+                        <DataGridTemplateColumn Header="Reiz" 
+                                            Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding FilePath, Mode=OneWay, Converter={StaticResource ImageConverter}}" 
+                                       Stretch="Uniform" 
+                                       Width="50" 
+                                       Height="50"
+                                       MouseLeftButtonDown="StimulusListItem_MouseLeftButtonDown">
+                                        <Image.ToolTip>
+                                            Reize können durch Drag-and-Drop Slots hinzugefügt werden.
+                                        </Image.ToolTip>
+                                    </Image>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <!--Name des Reizes. Tooltip ist hier vllt unintuitiv, aber muss wegen Binding so gemacht werden.-->
+                        <DataGridTextColumn Header="Name"
+                                        Binding="{Binding Path=Name, Mode=TwoWay}"
+                                        Width="*">
+                            <DataGridTextColumn.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Setter Property="ToolTip" Value="{Binding Path=Name}"/>
+                                    <Setter Property="Background" Value="#28353b"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGridTextColumn.CellStyle>
+                        </DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </ScrollViewer>
+        </DockPanel>
+        
+        <!--Button um neuen Slot hinzuzufügen-->
+        <DockPanel Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Grid.Row="0"
+                   Grid.RowSpan="10">
+            <Button Content="Neuen Slot hinzufügen"
+                    Command="{Binding AddNewSlotCommand}"
+                    DockPanel.Dock="Bottom">
+                <Button.ToolTip>
+                    Fügt der Sequenz einen neuen Slot hinzu. Sequenzen bestehen aus Slots, welche
+                    welche Reize (durch Drag-and-Drop aus der Liste rechts hinzufügen) enthalten,
+                    die durch verschiedene Parameter verändert werden können.
+                </Button.ToolTip>
+            </Button>
+            <TextBlock Text="Sequenzname:" 
+                       FontSize="12px"
+                       DockPanel.Dock="Top">
+                <TextBlock.ToolTip>
+                    Der Sequenzname beeinflusst die Namen der generierten Snapshots.
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Text="{Binding Path=SelectedSequence.Name, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                     FontSize="20"
+                     DockPanel.Dock="Top">
+                <TextBox.ToolTip>
+                    Der Sequenzname beeinflusst die Namen der generierten Snapshots.
+                </TextBox.ToolTip>
+            </TextBox>
+            
+            <!--Liste der in der Sequenz enthaltenen Slots-->
+            <ScrollViewer DockPanel.Dock="Top">
+                <Border BorderBrush="DimGray"
+                        BorderThickness="1px">
+                    <ItemsControl ItemsSource="{Binding Path=SelectedSequence.Slots}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <!--Das hier ist das Template für die Anzeige einzelner Slots-->
+                            <DataTemplate>
+                                <Border BorderThickness="1px"
+                                        BorderBrush="Black">
+                                    <Grid Background="Transparent">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="140"/>
+
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="45"/>
+
+                                            <ColumnDefinition Width="20"/>
+
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                            <RowDefinition Height="20"/>
+                                        </Grid.RowDefinitions>
+
+                                        <!--Reiz des Slots-->
+                                        <Border Height="140"
+                                                Width="140"
+                                                BorderThickness="2px"
+                                                BorderBrush="Black"
+                                                Grid.Column="0"
+                                                Grid.Row="0"
+                                                Grid.RowSpan="7">
+
+                                            <!--MouseLeftButtonDown erwirkt die Drag-and-Drop-Funktionalität-->
+                                            <Image Stretch="Uniform"
+                                                   AllowDrop="True"
+                                                   Drop="Stimulus_Drop"
+                                                   Name="StimulusDropTarget"
+                                                   MouseLeftButtonDown="SlotListItem_MouseLeftButtonDown"
+                                                   Source="{Binding Path=StimulusPath, Mode=OneWay, Converter={StaticResource ImageConverter}}">
+                                                <Image.ToolTip>
+                                                    Slots können durch Drag-and-Drop auf die Vorschaufläche im Hauptfenster
+                                                    positioniert werden.
+                                                </Image.ToolTip>
+                                            </Image>
+                                        </Border>
+
+                                        <TextBlock Text="Startzeit:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="0"
+                                                   Grid.ColumnSpan="2">
+                                            <TextBlock.ToolTip>
+                                                Die Startzeit bestimmt, wann der Slot in der Sequenz beginnt. Dieser Wert hat nur innerhalb der Sequenz Bedeutung.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <TextBox   Text="{Binding Path=StartTime, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                                                   Grid.Column="4"
+                                                   Grid.Row="0">
+                                            <TextBox.ToolTip>
+                                                Die Startzeit bestimmt, wann der Slot in der Sequenz beginnt. Dieser Wert hat nur innerhalb der Sequenz Bedeutung.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <!-- Change-Starting-Time-Buttons -->
+                                        <StackPanel Orientation="Vertical"
+                                                    Grid.Column="5"
+                                                    Grid.Row="0">
+                                            <Button Content="&#x1f53a;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="IncrementSlotStartTime_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Erhöht die Startzeit des Slots.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button Content="&#x1f53b;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="DecrementSlotStartTime_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Verringert die Startzeit des Slots.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                        </StackPanel>
+
+                                        <TextBlock Text="Dauer:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="1">
+                                            <TextBlock.ToolTip>
+                                                Die Dauer bestimmt, wie lange der Slot ab der Startzeit in Sekunden aktiv ist. Dieser Wert hat nur innerhalb der Sequenz Bedeutung.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <TextBox   Text="{Binding Path=Duration, Mode=TwoWay}"
+                                                   Grid.Column="4"
+                                                   Grid.Row="1">
+                                            <TextBox.ToolTip>
+                                                Die Dauer bestimmt, wie lange der Slot ab der Startzeit in Sekunden aktiv ist. Dieser Wert hat nur innerhalb der Sequenz Bedeutung.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <!-- Change-Duration-Buttons -->
+                                        <StackPanel Orientation="Vertical"
+                                                    Grid.Column="5"
+                                                    Grid.Row="1">
+                                            <Button Content="&#x1f53a;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="IncrementSlotDuration_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Erhöht die Dauer des Slots.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button Content="&#x1f53b;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="DecrementSlotDuration_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Verringert die Dauer des Slots.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                        </StackPanel>
+
+                                        <TextBlock Text="Position:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="2"
+                                                   Grid.ColumnSpan="2">
+                                            <TextBlock.ToolTip>
+                                                Die Position bestimmt, wo auf dem generierten Snapshot der Reiz des Slots gezeichnet wird.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <TextBox   Text="{Binding Path=XCoordinate, Mode=TwoWay}"
+                                                   Grid.Column="3"
+                                                   Grid.Row="2">
+                                            <TextBox.ToolTip>
+                                                Bestimmt die Position des Slots auf der X-Achse.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <TextBox   Text="{Binding Path=YCoordinate, Mode=TwoWay}"
+                                                   Grid.Column="4"
+                                                   Grid.Row="2">
+                                            <TextBox.ToolTip>
+                                                Bestimmt die Position des Slots auf der Y-Achse.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <!-- Center-Button -->
+                                        <Button Grid.Column="5"
+                                                Grid.Row="2"
+                                                Content="&#xE1D2;"
+                                                FontFamily="Segoe UI Symbol"
+                                                FontSize="12"
+                                                Click="CenterSlot_Click">
+                                            <Button.ToolTip>
+                                                <ToolTip>
+                                                    Zentriert den Slot.
+                                                </ToolTip>
+                                            </Button.ToolTip>
+                                        </Button>
+
+                                        <TextBlock Text="Skalierung:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="3"
+                                                   Grid.ColumnSpan="2">
+                                            <TextBlock.ToolTip>
+                                                Die Skalierung bestimmt mit welchem Koeffizienten die Größe des Reizes multipliziert wird, wenn dieser auf den Snapshot gezeichnet wird.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <TextBox Text="{Binding Path=Scale, Mode=TwoWay}"
+                                                 Grid.Column="4"
+                                                 Grid.Row="3">
+                                            <TextBox.ToolTip>
+                                                Die Skalierung bestimmt mit welchem Koeffizienten die Größe des Reizes multipliziert wird, wenn dieser auf den Snapshot gezeichnet wird.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <!--Stretch-Button-->
+                                        <Button Grid.Column="5"
+                                                Grid.Row="3"
+                                                Content="&#xE1D9;"
+                                                FontFamily="Segoe UI Symbol"
+                                                FontSize="12"
+                                                Click="StretchSlot_Click">
+                                            <Button.ToolTip>
+                                                <ToolTip>
+                                                    Passt die Skalierung des Slots an die Experimentauflösung an.
+                                                </ToolTip>
+                                            </Button.ToolTip>
+                                        </Button>
+
+                                        <TextBlock Text="Pausiert:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="6"
+                                                   Grid.ColumnSpan="2">
+                                            <TextBlock.ToolTip>
+                                                Wenn diese Option aktiviert ist, dann pausiert die Präsentation beim ersten Auftreten dieses Slots und wartet auf eine Eingabe der Versuchsperson.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <CheckBox IsChecked="{Binding Path=Pauses, Mode=TwoWay}"
+                                                  Grid.Column="4"
+                                                  Grid.Row="6"
+                                                  Margin="15,0,0,0">
+                                            <CheckBox.ToolTip>
+                                                Wenn diese Option aktiviert ist, dann pausiert die Präsentation beim ersten Auftreten dieses Slots und wartet auf eine Eingabe der Versuchsperson.
+                                            </CheckBox.ToolTip>
+                                        </CheckBox>
+
+                                        <TextBlock Text="Layer:"
+                                                   Grid.Column="1"
+                                                   Grid.Row="4"
+                                                   Grid.ColumnSpan="2">
+                                            <TextBlock.ToolTip>
+                                                Die Ebene, auf welcher der Slot gezeichnet wird. Ein Slot auf einer höheren Ebene überlagert niedrigere Slots.
+                                            </TextBlock.ToolTip>
+                                        </TextBlock>
+                                        <TextBox Text="{Binding Path=Layer, Mode=TwoWay}"
+                                                 Grid.Column="4"
+                                                 Grid.Row="4">
+                                            <TextBox.ToolTip>
+                                                Die Ebene, auf welcher der Slot gezeichnet wird. Ein Slot auf einer höheren Ebene überlagert niedrigere Slots.
+                                            </TextBox.ToolTip>
+                                        </TextBox>
+                                        <!-- Change-Layer-Buttons -->
+                                        <StackPanel Orientation="Vertical"
+                                                    Grid.Column="5"
+                                                    Grid.Row="4">
+                                            <Button Content="&#x1f53a;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="IncrementSlotLayer_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Erhöht die Ebene, in welcher der Slot in Snapshots gezeichnet wird.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                            <Button Content="&#x1f53b;"
+                                                    FontSize="6"
+                                                    FontFamily="Segoe UI Symbol"
+                                                    Height="10"
+                                                    Click="DecrementSlotLayer_Click">
+                                                <Button.ToolTip>
+                                                    <ToolTip>
+                                                        Verringert die Ebene, in welcher der Slot in Snapshots gezeichnet wird.
+                                                    </ToolTip>
+                                                </Button.ToolTip>
+                                            </Button>
+                                        </StackPanel>
+                                    </Grid>
+                                    <Border.ContextMenu>
+                                        <ContextMenu>
+                                            <MenuItem Header="Duplizieren" Click="DuplicateSlot_Click"/>
+                                            <MenuItem Header="Reiz entfernen" Click="RemoveStimulusFromSlot_Click"/>
+                                            <MenuItem Header="Löschen" Click="DeleteSlot_Click"/>
+                                        </ContextMenu>
+                                    </Border.ContextMenu>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Border>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</views:MvxWindow>

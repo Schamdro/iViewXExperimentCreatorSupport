@@ -1,0 +1,218 @@
+﻿<views:MvxWindow 
+             xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+             xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+             x:Class="iViewXExperimentCreator.Wpf.Views.VideoEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:iViewXExperimentCreator.Wpf.Views"
+    mc:Ignorable="d" Height="260" Width="300"
+             ResizeMode="NoResize">
+
+
+    <views:MvxWindow.Background>
+        <SolidColorBrush Color="#17191a"/>
+    </views:MvxWindow.Background>
+
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4"
+                   Grid.Row="0">
+            <TextBlock Text="Name:" 
+                   FontSize="12px">
+                <TextBlock.ToolTip>
+                    Bestimmt den Namen des generierten Videosnippets.
+                </TextBlock.ToolTip>
+            </TextBlock>
+            <TextBox Text="{Binding SelectedVideo.Name, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                 FontSize="20px">
+                <TextBox.ToolTip>
+                    Bestimmt den Namen des generierten Videosnippets.
+                </TextBox.ToolTip>
+            </TextBox>
+        </StackPanel>
+
+        <TextBlock Text="Video:"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2">
+            <TextBlock.ToolTip>
+                Die Videodatei, aus welcher das Videosnippet extrahiert wird.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <!--Hier kann der gewünschte Videoreiz aus einem Dropdownmenü gewählt werden-->
+        <ComboBox Template="{DynamicResource ComboBoxTemplateRestyle}" 
+                  ItemsSource="{Binding Stimuli}"
+                  SelectedItem="{Binding SelectedVideo.Stimulus}"
+                  Grid.Column="2"
+                  Grid.Row="1"
+                  Grid.ColumnSpan="2">
+            <ComboBox.Style>
+                <Style TargetType="ComboBox">
+                    <Setter Property="ToolTip" Value="{Binding SelectedVideo.Stimulus}"/>
+                </Style>
+            </ComboBox.Style>
+        </ComboBox>
+
+        <TextBlock Text="Start:"
+                   Grid.Column="0"
+                   Grid.Row="2">
+            <TextBlock.ToolTip>
+                Der Zeitstempel, an welchem das Videosnippet in der Videodatei beginnt.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="3"
+                    Grid.Row="2">
+            <TextBox Text="{Binding SelectedVideo.Timestamp, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                     Width="46">
+                <TextBox.ToolTip>
+                    Der Zeitstempel, an welchem das Videosnippet beginnt.
+                </TextBox.ToolTip>
+            </TextBox>
+            <!--Buttons zur Veränderung der Startzeit-->
+            <StackPanel Orientation="Vertical"
+                        Grid.Column="5"
+                        Grid.Row="0"
+                        Width="15"
+                        Height="24">
+                <Button Content="&#x1f53a;"
+                        FontSize="6"
+                        FontFamily="Segoe UI Symbol"
+                        Height="12"
+                        Command="{Binding IncrementVideoStartTimeCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            Erhöht den Startzeitstempel des Videosnippets.
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button Content="&#x1f53b;"
+                        FontSize="6"
+                        FontFamily="Segoe UI Symbol"
+                        Height="12"
+                        Command="{Binding DecrementVideoStartTimeCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            Verringert den Startzeitstempel des Videosnippets.
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+
+        <TextBlock Text="Dauer:"
+                   Grid.Column="0"
+                   Grid.Row="3">
+            <TextBlock.ToolTip>
+                Die Dauer des generierten Videosnippets ab dem Startzeitstempel.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Column="3"
+                    Grid.Row="3">
+            <TextBox Text="{Binding SelectedVideo.Duration, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"
+                     Width="46">
+                <TextBox.ToolTip>
+                    Die Dauer des generierten Videosnippets ab dem Startzeitstempel.
+                </TextBox.ToolTip>
+            </TextBox>
+            <!--Buttons zur Veränderung der Dauer-->
+            <StackPanel Orientation="Vertical"
+                        Grid.Column="5"
+                        Grid.Row="0"
+                        Width="15"
+                        Height="24">
+                <Button Content="&#x1f53a;"
+                        FontSize="6"
+                        FontFamily="Segoe UI Symbol"
+                        Height="12"
+                        Command="{Binding IncrementVideoDurationCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            Erhöht die Dauer des Videosnippets.
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+                <Button Content="&#x1f53b;"
+                        FontSize="6"
+                        FontFamily="Segoe UI Symbol"
+                        Height="12"
+                        Command="{Binding DecrementVideoDurationCommand}">
+                    <Button.ToolTip>
+                        <ToolTip>
+                            Verringert die Dauer des Videosnippets.
+                        </ToolTip>
+                    </Button.ToolTip>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+
+        <TextBlock Text="Lautstärke:"
+                   Grid.Column="2"
+                   Grid.Row="5">
+            <TextBlock.ToolTip>
+                Reguliert die Lautstärke des Videos.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <!--Schieberegler für die Lautstärke-->
+        <Slider   Value="{Binding SelectedVideo.Volume}"
+                  Width="60"
+                  Maximum="1"
+                  Grid.Column="3"
+                  Grid.Row="5"
+                  HorizontalAlignment="Center">
+            <Slider.ToolTip>
+                Reguliert die Lautstärke des Videos.
+            </Slider.ToolTip>
+        </Slider>
+
+        <TextBlock Text="Pausiert:"
+                   Grid.Column="0"
+                   Grid.Row="5">
+            <TextBlock.ToolTip>
+                Beeinflusst, ob das generierte Videosnippet bei der Präsentation zunächst pausiert und auf eine Eingabe der Versuchsperson wartet.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <!--Checkbox um Pausierung am Anfang des Videos zu erlauben-->
+        <CheckBox IsChecked="{Binding SelectedVideo.Pauses, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  Grid.Column="1"
+                  Grid.Row="5"
+                  HorizontalAlignment="Center">
+            <CheckBox.ToolTip>
+                Beeinflusst, ob das generierte Videosnippet bei der Präsentation zunächst pausiert und auf eine Eingabe der Versuchsperson wartet.
+            </CheckBox.ToolTip>
+        </CheckBox>
+
+        <Button Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Grid.Row="6"
+                Content="Reiz(e) importieren"
+                Click="Button_OpenStimulusImportFileDialog">
+            <Button.ToolTip>
+                Öffnet den Windows-File-Dialog zum Hinzufügen neuer Videoreize.
+            </Button.ToolTip>
+        </Button>
+
+    </Grid>
+
+</views:MvxWindow>

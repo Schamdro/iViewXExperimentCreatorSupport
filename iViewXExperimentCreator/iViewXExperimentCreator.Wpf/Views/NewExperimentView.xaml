@@ -1,0 +1,128 @@
+﻿<views:MvxWindow
+             xmlns:views="clr-namespace:MvvmCross.Platforms.Wpf.Views;assembly=MvvmCross.Platforms.Wpf"
+             xmlns:mvx="clr-namespace:MvvmCross.Platforms.Wpf.Binding;assembly=MvvmCross.Platforms.Wpf"
+             x:Class="iViewXExperimentCreator.Wpf.Views.NewExperimentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:iViewXExperimentCreator.Wpf.Views"
+             Height="220" Width="380" ResizeMode="CanMinimize">
+
+    <views:MvxWindow.Background>
+        <SolidColorBrush Color="#17191a"/>
+    </views:MvxWindow.Background>
+
+    <views:MvxWindow.Resources>
+    </views:MvxWindow.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text=""
+                   FontSize="20"
+                   TextAlignment="Center"
+                   Grid.ColumnSpan="4"
+                   Grid.Column="0"
+                   Grid.Row="0"/>
+        <TextBlock Text="Name:"
+                   FontSize="16"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                   Margin="30, 0, 0, 0">
+            <TextBlock.ToolTip>
+                Der Name des Experiments.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <TextBlock Text="Auflösung:"
+                   FontSize="16"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Grid.Row="2"
+                   Margin="30, 0, 0, 0">
+            <TextBlock.ToolTip>
+                Die Auflösung der generierten Snapshots.
+            </TextBlock.ToolTip>
+        </TextBlock>
+        <TextBlock Text="Kalibrierungspunkte:"
+                   FontSize="16"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   Margin="30, 0, 0, 0">
+            <TextBlock.ToolTip>
+                Die Anzahl der Punkte, die zur Kalibrierung verwendet werden.
+            </TextBlock.ToolTip>
+        </TextBlock>
+
+
+        <TextBox Text="{Binding ExperimentName}"
+                 FontSize="16"
+                 Grid.ColumnSpan="2"
+                 Grid.Column="2"
+                 Grid.Row="1"
+                 Margin="0, 0, 30, 0">
+            <TextBox.ToolTip>
+                Der Name des Experiments.
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox Text="{Binding ResolutionX, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="16"
+                 Grid.Column="2"
+                 Grid.Row="2"
+                 Margin="30, 0, 0, 0">
+            <TextBox.ToolTip>
+                Bestimmt die Breite der generierten Snapshots.
+            </TextBox.ToolTip>
+        </TextBox>
+        <TextBox Text="{Binding ResolutionY, UpdateSourceTrigger=PropertyChanged}"
+                 FontSize="16"
+                 Grid.Column="3"
+                 Grid.Row="2"
+                 Margin="0, 0, 30, 0">
+            <TextBox.ToolTip>
+                Bestimmt die Höhe der generierten Snapshots.
+            </TextBox.ToolTip>
+        </TextBox>
+        <ComboBox Template="{DynamicResource ComboBoxTemplateRestyle}" 
+                  ItemsSource="{Binding CalibrationPoints}"
+                  SelectedItem="{Binding SelectedCalibrationPoints}"
+                  FontSize="16"
+                  Grid.ColumnSpan="2"
+                  Grid.Column="2"
+                  Grid.Row="3"
+                  Margin="90, 0, 30, 0">
+            <ComboBox.ToolTip>
+                Die Anzahl der Punkte, die zur Kalibrierung verwendet werden.
+            </ComboBox.ToolTip>
+        </ComboBox>
+
+
+        <!--Button zur Erstellung eines neuen Experiments-->
+        <Button Content="Neues Experiment"
+                Command="{Binding CreateExperimentCommand}"
+                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                Grid.Row="5"
+                Margin="5">
+            <Button.ToolTip>
+                Erstellt das Experiment.
+            </Button.ToolTip>
+        </Button>
+
+    </Grid>
+</views:MvxWindow>
