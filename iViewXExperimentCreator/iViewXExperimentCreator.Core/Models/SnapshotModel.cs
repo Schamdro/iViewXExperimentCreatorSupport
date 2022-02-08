@@ -122,5 +122,11 @@ namespace iViewXExperimentCreator.Core.Models
             _snapshotImage = bmp;
             return bmp;
         }
+
+        public void Reset()
+        {
+            _snapshotImage = null;
+            CreateSnapshotImage();
+        }
     }
 }

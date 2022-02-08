@@ -285,7 +285,13 @@ namespace iViewXExperimentCreator.Core.Models
                 SetProperty(ref _background, value);
                 Dirty = true;
                 if (MainViewModel.Instance.LastSelectedPresentable is not null)
-                    MainViewModel.Instance.RefreshPreview();
+                {
+                    if(MainViewModel.Instance.LastSelectedPresentable is SnapshotModel ss)
+                    {
+                        ss.Reset();
+                        MainViewModel.Instance.RefreshPreview();
+                    }
+                }
                 else
                     MainViewModel.Instance.RaisePropertyChanged("PreviewImage");
             }
