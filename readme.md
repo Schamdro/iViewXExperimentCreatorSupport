@@ -1,3 +1,5 @@
+Falls Kompilierung nicht klappt -> iViewXExperimentCreator.Wpf als Startprojekt setzen
+
 Bugfixes nach Abgabe:
 
 - Performance bei Platzierung & Veränderung von Slots wieder besser
