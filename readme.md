@@ -1,4 +1,4 @@
-Falls Kompilierung nicht klappt -> iViewXExperimentCreator.Wpf als Startprojekt setzen
+Falls Kompilierung nicht klappt -> iViewXExperimentCreator.Wpf als Startprojekt setzen und dort als Abhängigkeit das Projekt iViewXExperimentCreator.Core setzen.
 
 Bugfixes nach Abgabe:
 
