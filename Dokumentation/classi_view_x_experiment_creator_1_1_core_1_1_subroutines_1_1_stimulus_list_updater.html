@@ -1,0 +1,731 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>iView X Experiment Creator: iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="appicon-small.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">iView X Experiment Creator
+   </div>
+   <div id="projectbrief">Anwendung zur Definition und Durchführung von Experimenten mit dem SMI iView X Hi Speed Eye Tracker</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Suchen','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Öffentliche Methoden</a> &#124;
+<a href="#pub-static-methods">Öffentliche, statische Methoden</a> &#124;
+<a href="#pub-static-attribs">Statische öffentliche Attribute</a> &#124;
+<a href="#properties">Propertys</a> &#124;
+<a href="#pri-methods">Private Methoden</a> &#124;
+<a href="#pri-static-methods">Private, statische Methoden</a> &#124;
+<a href="#pri-attribs">Private Attribute</a> &#124;
+<a href="#pri-static-attribs">Statische, private Attribute</a> &#124;
+<a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle"><div class="title">iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater Klassenreferenz</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Diese Klasse startet eine Subroutine, die den Ordner \Stimuli auf während der Laufzeit hinzugefügte Reize überprüft und fügt diese Reize über ein Action-Delegate der Stimuli-Liste aus dem MainViewModel hinzu.  
+ <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#details">Mehr ...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Öffentliche Methoden</h2></td></tr>
+<tr class="memitem:abd79eade664bdbd9c8a68bacca5c2cc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#abd79eade664bdbd9c8a68bacca5c2cc0">StimulusListUpdater</a> (Action&lt; <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a>, <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a> &gt; addToList, string path)</td></tr>
+<tr class="memdesc:abd79eade664bdbd9c8a68bacca5c2cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konstruktor. Nimmt ein Delegate entegegen. Dieser wird zum Hinzufügen der Reize in eine Liste verwendet. Erklärung, wieso das so ist, ist bei der Übergabe im ExperimentModel selbst gegeben.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#abd79eade664bdbd9c8a68bacca5c2cc0">Mehr ...</a><br /></td></tr>
+<tr class="separator:abd79eade664bdbd9c8a68bacca5c2cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9d11da2d051a54f6e2dd032e585759f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae9d11da2d051a54f6e2dd032e585759f">Stop</a> ()</td></tr>
+<tr class="memdesc:ae9d11da2d051a54f6e2dd032e585759f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hält den Watcher an und gibt alle gehaltenen Dateien frei.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae9d11da2d051a54f6e2dd032e585759f">Mehr ...</a><br /></td></tr>
+<tr class="separator:ae9d11da2d051a54f6e2dd032e585759f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Öffentliche, statische Methoden</h2></td></tr>
+<tr class="memitem:ae988201f4a008884c17278ad1b8e5054"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae988201f4a008884c17278ad1b8e5054">ImportNewStimulus</a> (string sourcePath)</td></tr>
+<tr class="memdesc:ae988201f4a008884c17278ad1b8e5054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kopiert eine Stimulus-Datei in das Stimuli-Verzeichnis im Experimentordner.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae988201f4a008884c17278ad1b8e5054">Mehr ...</a><br /></td></tr>
+<tr class="separator:ae988201f4a008884c17278ad1b8e5054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef37ce2abd3ae067d98c31dc0ae4eeb1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#aef37ce2abd3ae067d98c31dc0ae4eeb1">ConvertPDF</a> (string path)</td></tr>
+<tr class="memdesc:aef37ce2abd3ae067d98c31dc0ae4eeb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Konvertiert eine PDF-Datei mit der PDFConverter-Klasse unter Verwendung von Ghostscript.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#aef37ce2abd3ae067d98c31dc0ae4eeb1">Mehr ...</a><br /></td></tr>
+<tr class="separator:aef37ce2abd3ae067d98c31dc0ae4eeb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Statische öffentliche Attribute</h2></td></tr>
+<tr class="memitem:a783bc71f93ba6c2264298b92dfb66e98"><td class="memItemLeft" align="right" valign="top">static readonly string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a783bc71f93ba6c2264298b92dfb66e98">SUPPORTED_IMAGE_EXTENSIONS</a> = { &quot;.png&quot;, &quot;.jpg&quot;, &quot;.bmp&quot;, &quot;.jpeg&quot;, &quot;.pdf&quot;, &quot;.gif&quot;, &quot;.tif&quot;, &quot;.tiff&quot; }</td></tr>
+<tr class="memdesc:a783bc71f93ba6c2264298b92dfb66e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unterstützte Dateiformate für Bildreize.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a783bc71f93ba6c2264298b92dfb66e98">Mehr ...</a><br /></td></tr>
+<tr class="separator:a783bc71f93ba6c2264298b92dfb66e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12af0ab0af8942a367549055d66b4f04"><td class="memItemLeft" align="right" valign="top">static readonly string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a12af0ab0af8942a367549055d66b4f04">SUPPORTED_VIDEO_EXTENSIONS</a> = { &quot;.mp4&quot;, &quot;.avi&quot;, &quot;.mov&quot;, &quot;.wmv&quot; }</td></tr>
+<tr class="memdesc:a12af0ab0af8942a367549055d66b4f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unterstützte Dateiformate für Videoreize.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a12af0ab0af8942a367549055d66b4f04">Mehr ...</a><br /></td></tr>
+<tr class="separator:a12af0ab0af8942a367549055d66b4f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dbd107d4855d1d15788cb53e9ac4652"><td class="memItemLeft" align="right" valign="top">static readonly string[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a6dbd107d4855d1d15788cb53e9ac4652">SUPPORTED_EXTENSIONS</a></td></tr>
+<tr class="separator:a6dbd107d4855d1d15788cb53e9ac4652"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Propertys</h2></td></tr>
+<tr class="memitem:ab94b01bc3e5b4a731527030ec8102c6c"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ab94b01bc3e5b4a731527030ec8102c6c">StimulusDirectory</a><code> [getset]</code></td></tr>
+<tr class="memdesc:ab94b01bc3e5b4a731527030ec8102c6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Das Stimulus-Verzeichnis im Experimentordner.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ab94b01bc3e5b4a731527030ec8102c6c">Mehr ...</a><br /></td></tr>
+<tr class="separator:ab94b01bc3e5b4a731527030ec8102c6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a836e27f55bd98ca16494debafde70265"><td class="memItemLeft" align="right" valign="top">FileSystemWatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a836e27f55bd98ca16494debafde70265">Watcher</a><code> [get]</code></td></tr>
+<tr class="memdesc:a836e27f55bd98ca16494debafde70265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Der FileSystemWatcher. Überprüft den Stimuli-Ordnet im Experimentverzeichnis auf neue Dateien.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a836e27f55bd98ca16494debafde70265">Mehr ...</a><br /></td></tr>
+<tr class="separator:a836e27f55bd98ca16494debafde70265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Methoden</h2></td></tr>
+<tr class="memitem:a9d5668a248f5da9cfb08c425528cda66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a9d5668a248f5da9cfb08c425528cda66">InitFileSystemWatcher</a> ()</td></tr>
+<tr class="memdesc:a9d5668a248f5da9cfb08c425528cda66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Startet den FileSystemWatcher auf dem Stimuli-Verzeichnis im Experimentordner.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a9d5668a248f5da9cfb08c425528cda66">Mehr ...</a><br /></td></tr>
+<tr class="separator:a9d5668a248f5da9cfb08c425528cda66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08b55d27cd15f252d7ff96668945586"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae08b55d27cd15f252d7ff96668945586">ConfigureFileSystemWatcher</a> ()</td></tr>
+<tr class="memdesc:ae08b55d27cd15f252d7ff96668945586"><td class="mdescLeft">&#160;</td><td class="mdescRight">Einstellungen des FileSystemWatchers werden hier konfiguriert.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#ae08b55d27cd15f252d7ff96668945586">Mehr ...</a><br /></td></tr>
+<tr class="separator:ae08b55d27cd15f252d7ff96668945586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Private, statische Methoden</h2></td></tr>
+<tr class="memitem:a2ddc7810cafd41129fdaf7f82486a978"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a2ddc7810cafd41129fdaf7f82486a978">OnCreated</a> (object sender, FileSystemEventArgs e)</td></tr>
+<tr class="memdesc:a2ddc7810cafd41129fdaf7f82486a978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wird aufgerufen, wenn FileSystemWatcher das Event feuert, dass im überwachten Ordner \Stimuli eine neue Datei gefunden wurde.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a2ddc7810cafd41129fdaf7f82486a978">Mehr ...</a><br /></td></tr>
+<tr class="separator:a2ddc7810cafd41129fdaf7f82486a978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fca2d2d20d7b846197c7a66cc9f6745"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a3fca2d2d20d7b846197c7a66cc9f6745">AddToListWithExt</a> (string path)</td></tr>
+<tr class="memdesc:a3fca2d2d20d7b846197c7a66cc9f6745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fügt abhängig von der Dateiendung den Stimulus in die korrekte Liste hinzu.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a3fca2d2d20d7b846197c7a66cc9f6745">Mehr ...</a><br /></td></tr>
+<tr class="separator:a3fca2d2d20d7b846197c7a66cc9f6745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e26d57beaa2379bd2c1c9693e43f794"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a4e26d57beaa2379bd2c1c9693e43f794">ValidateFileExtension</a> (string fp)</td></tr>
+<tr class="memdesc:a4e26d57beaa2379bd2c1c9693e43f794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Überprüft, ob die Dateiendung valide ist.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a4e26d57beaa2379bd2c1c9693e43f794">Mehr ...</a><br /></td></tr>
+<tr class="separator:a4e26d57beaa2379bd2c1c9693e43f794"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf637777a5a24055c85dcbf78280246e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#aaf637777a5a24055c85dcbf78280246e">CreateNewStimulus</a> (string path, <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a> ext)</td></tr>
+<tr class="memdesc:aaf637777a5a24055c85dcbf78280246e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erstellt ein neues StimulusModel mit dem übergebenen Dateipfad.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#aaf637777a5a24055c85dcbf78280246e">Mehr ...</a><br /></td></tr>
+<tr class="separator:aaf637777a5a24055c85dcbf78280246e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attribute</h2></td></tr>
+<tr class="memitem:aca7585f6fb1448e985e432bfdcde2564"><td class="memItemLeft" align="right" valign="top">FileSystemWatcher&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#aca7585f6fb1448e985e432bfdcde2564">_watcher</a></td></tr>
+<tr class="separator:aca7585f6fb1448e985e432bfdcde2564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Statische, private Attribute</h2></td></tr>
+<tr class="memitem:a75ebbdd76b152e0edec62128a626c848"><td class="memItemLeft" align="right" valign="top">static Action&lt; <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a>, <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a75ebbdd76b152e0edec62128a626c848">_addToList</a></td></tr>
+<tr class="memdesc:a75ebbdd76b152e0edec62128a626c848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Referenziert Add-Funktion der Stimuli-MvxObservableCollection im ExperimentModel.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a75ebbdd76b152e0edec62128a626c848">Mehr ...</a><br /></td></tr>
+<tr class="separator:a75ebbdd76b152e0edec62128a626c848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p >Diese Klasse startet eine Subroutine, die den Ordner \Stimuli auf während der Laufzeit hinzugefügte Reize überprüft und fügt diese Reize über ein Action-Delegate der Stimuli-Liste aus dem MainViewModel hinzu. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a id="abd79eade664bdbd9c8a68bacca5c2cc0" name="abd79eade664bdbd9c8a68bacca5c2cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd79eade664bdbd9c8a68bacca5c2cc0">&#9670;&nbsp;</a></span>StimulusListUpdater()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.StimulusListUpdater </td>
+          <td>(</td>
+          <td class="paramtype">Action&lt; <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a>, <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a> &gt;&#160;</td>
+          <td class="paramname"><em>addToList</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konstruktor. Nimmt ein Delegate entegegen. Dieser wird zum Hinzufügen der Reize in eine Liste verwendet. Erklärung, wieso das so ist, ist bei der Übergabe im ExperimentModel selbst gegeben. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addToList</td><td></td></tr>
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a3fca2d2d20d7b846197c7a66cc9f6745" name="a3fca2d2d20d7b846197c7a66cc9f6745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fca2d2d20d7b846197c7a66cc9f6745">&#9670;&nbsp;</a></span>AddToListWithExt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.AddToListWithExt </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fügt abhängig von der Dateiendung den Stimulus in die korrekte Liste hinzu. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td></td></tr>
+    <tr><td class="paramname">loaded</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae08b55d27cd15f252d7ff96668945586" name="ae08b55d27cd15f252d7ff96668945586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08b55d27cd15f252d7ff96668945586">&#9670;&nbsp;</a></span>ConfigureFileSystemWatcher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.ConfigureFileSystemWatcher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Einstellungen des FileSystemWatchers werden hier konfiguriert. </p>
+
+</div>
+</div>
+<a id="aef37ce2abd3ae067d98c31dc0ae4eeb1" name="aef37ce2abd3ae067d98c31dc0ae4eeb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef37ce2abd3ae067d98c31dc0ae4eeb1">&#9670;&nbsp;</a></span>ConvertPDF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.ConvertPDF </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Konvertiert eine PDF-Datei mit der PDFConverter-Klasse unter Verwendung von Ghostscript. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaf637777a5a24055c85dcbf78280246e" name="aaf637777a5a24055c85dcbf78280246e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf637777a5a24055c85dcbf78280246e">&#9670;&nbsp;</a></span>CreateNewStimulus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a> iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.CreateNewStimulus </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a>&#160;</td>
+          <td class="paramname"><em>ext</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erstellt ein neues StimulusModel mit dem übergebenen Dateipfad. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">loaded</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae988201f4a008884c17278ad1b8e5054" name="ae988201f4a008884c17278ad1b8e5054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae988201f4a008884c17278ad1b8e5054">&#9670;&nbsp;</a></span>ImportNewStimulus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.ImportNewStimulus </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>sourcePath</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Kopiert eine Stimulus-Datei in das Stimuli-Verzeichnis im Experimentordner. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourcePath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9d5668a248f5da9cfb08c425528cda66" name="a9d5668a248f5da9cfb08c425528cda66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5668a248f5da9cfb08c425528cda66">&#9670;&nbsp;</a></span>InitFileSystemWatcher()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.InitFileSystemWatcher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Startet den FileSystemWatcher auf dem Stimuli-Verzeichnis im Experimentordner. </p>
+
+</div>
+</div>
+<a id="a2ddc7810cafd41129fdaf7f82486a978" name="a2ddc7810cafd41129fdaf7f82486a978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ddc7810cafd41129fdaf7f82486a978">&#9670;&nbsp;</a></span>OnCreated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.OnCreated </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>sender</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FileSystemEventArgs&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wird aufgerufen, wenn FileSystemWatcher das Event feuert, dass im überwachten Ordner \Stimuli eine neue Datei gefunden wurde. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sender</td><td></td></tr>
+    <tr><td class="paramname">e</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae9d11da2d051a54f6e2dd032e585759f" name="ae9d11da2d051a54f6e2dd032e585759f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9d11da2d051a54f6e2dd032e585759f">&#9670;&nbsp;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.Stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hält den Watcher an und gibt alle gehaltenen Dateien frei. </p>
+
+</div>
+</div>
+<a id="a4e26d57beaa2379bd2c1c9693e43f794" name="a4e26d57beaa2379bd2c1c9693e43f794"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e26d57beaa2379bd2c1c9693e43f794">&#9670;&nbsp;</a></span>ValidateFileExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a> iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.ValidateFileExtension </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>fp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Überprüft, ob die Dateiendung valide ist. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fp</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Rückgabe</dt><dd></dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a75ebbdd76b152e0edec62128a626c848" name="a75ebbdd76b152e0edec62128a626c848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ebbdd76b152e0edec62128a626c848">&#9670;&nbsp;</a></span>_addToList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Action&lt;<a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_models_1_1_stimulus_model.html">StimulusModel</a>, <a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a961fbacbaee646fad848d0d39a3623c5">ExtensionType</a>&gt; iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater._addToList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Referenziert Add-Funktion der Stimuli-MvxObservableCollection im ExperimentModel. </p>
+
+</div>
+</div>
+<a id="aca7585f6fb1448e985e432bfdcde2564" name="aca7585f6fb1448e985e432bfdcde2564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7585f6fb1448e985e432bfdcde2564">&#9670;&nbsp;</a></span>_watcher</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FileSystemWatcher iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater._watcher</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6dbd107d4855d1d15788cb53e9ac4652" name="a6dbd107d4855d1d15788cb53e9ac4652"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dbd107d4855d1d15788cb53e9ac4652">&#9670;&nbsp;</a></span>SUPPORTED_EXTENSIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly string [] iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.SUPPORTED_EXTENSIONS</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initialisierung:</b><div class="fragment"><div class="line">= <a class="code hl_variable" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a783bc71f93ba6c2264298b92dfb66e98">SUPPORTED_IMAGE_EXTENSIONS</a></div>
+<div class="line">                                                                .Union(<a class="code hl_variable" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a12af0ab0af8942a367549055d66b4f04">SUPPORTED_VIDEO_EXTENSIONS</a>)</div>
+<div class="line">                                                                .ToArray()</div>
+<div class="ttc" id="aclassi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater_html_a12af0ab0af8942a367549055d66b4f04"><div class="ttname"><a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a12af0ab0af8942a367549055d66b4f04">iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.SUPPORTED_VIDEO_EXTENSIONS</a></div><div class="ttdeci">static readonly string[] SUPPORTED_VIDEO_EXTENSIONS</div><div class="ttdoc">Unterstützte Dateiformate für Videoreize.</div><div class="ttdef"><b>Definition:</b> StimulusListUpdater.cs:32</div></div>
+<div class="ttc" id="aclassi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater_html_a783bc71f93ba6c2264298b92dfb66e98"><div class="ttname"><a href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html#a783bc71f93ba6c2264298b92dfb66e98">iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.SUPPORTED_IMAGE_EXTENSIONS</a></div><div class="ttdeci">static readonly string[] SUPPORTED_IMAGE_EXTENSIONS</div><div class="ttdoc">Unterstützte Dateiformate für Bildreize.</div><div class="ttdef"><b>Definition:</b> StimulusListUpdater.cs:26</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a783bc71f93ba6c2264298b92dfb66e98" name="a783bc71f93ba6c2264298b92dfb66e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783bc71f93ba6c2264298b92dfb66e98">&#9670;&nbsp;</a></span>SUPPORTED_IMAGE_EXTENSIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly string [] iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.SUPPORTED_IMAGE_EXTENSIONS = { &quot;.png&quot;, &quot;.jpg&quot;, &quot;.bmp&quot;, &quot;.jpeg&quot;, &quot;.pdf&quot;, &quot;.gif&quot;, &quot;.tif&quot;, &quot;.tiff&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unterstützte Dateiformate für Bildreize. </p>
+<p >PNG, JPG, JPEG, BMP, PDF, GIF, TIF, TIFF </p>
+
+</div>
+</div>
+<a id="a12af0ab0af8942a367549055d66b4f04" name="a12af0ab0af8942a367549055d66b4f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12af0ab0af8942a367549055d66b4f04">&#9670;&nbsp;</a></span>SUPPORTED_VIDEO_EXTENSIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">readonly string [] iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.SUPPORTED_VIDEO_EXTENSIONS = { &quot;.mp4&quot;, &quot;.avi&quot;, &quot;.mov&quot;, &quot;.wmv&quot; }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unterstützte Dateiformate für Videoreize. </p>
+<p >MP4, AVI, MOV, WMV </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Propertys</h2>
+<a id="ab94b01bc3e5b4a731527030ec8102c6c" name="ab94b01bc3e5b4a731527030ec8102c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94b01bc3e5b4a731527030ec8102c6c">&#9670;&nbsp;</a></span>StimulusDirectory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.StimulusDirectory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Das Stimulus-Verzeichnis im Experimentordner. </p>
+
+</div>
+</div>
+<a id="a836e27f55bd98ca16494debafde70265" name="a836e27f55bd98ca16494debafde70265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a836e27f55bd98ca16494debafde70265">&#9670;&nbsp;</a></span>Watcher</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FileSystemWatcher iViewXExperimentCreator.Core.Subroutines.StimulusListUpdater.Watcher</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Der FileSystemWatcher. Überprüft den Stimuli-Ordnet im Experimentverzeichnis auf neue Dateien. </p>
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li>C:/Users/nussh/Documents/Studium/Bachelorarbeit/Repo/iViewX-Experiment-Creator/iViewXExperimentCreator/iViewXExperimentCreator.Core/Subroutines/<a class="el" href="_stimulus_list_updater_8cs.html">StimulusListUpdater.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacei_view_x_experiment_creator.html">iViewXExperimentCreator</a></li><li class="navelem"><a class="el" href="namespacei_view_x_experiment_creator_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_subroutines.html">Subroutines</a></li><li class="navelem"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_subroutines_1_1_stimulus_list_updater.html">StimulusListUpdater</a></li>
+    <li class="footer">Erzeugt von <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>

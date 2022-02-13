@@ -1,0 +1,26 @@
+var classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model =
+[
+    [ "VideoEditorViewModel", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a93c184f96d750060440447dff3c67ea9", null ],
+    [ "Close", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a03f0a87ab69eef17b4a023f8c29c2775", null ],
+    [ "DecrementVideoDuration", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a57e31797b13c2bfbe92e1c6409741262", null ],
+    [ "DecrementVideoStartTime", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#aee6cd713926de3a5bb10e07e3fd9c459", null ],
+    [ "ImportStimulus", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#ac57df7bd0fe661821f1f051b6fb093aa", null ],
+    [ "IncrementVideoDuration", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#ae3e3fa358d9f5c0f3cba7388c3cea2e2", null ],
+    [ "IncrementVideoStartTime", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a3416aa66ccba4dcdf24a201a0b73264a", null ],
+    [ "Initialize", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#ae9e085c5771ebd2c4037d2fc3c89ade3", null ],
+    [ "IsVideoAlreadyOpen", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a1dcba4d8b22dcf7297a6bf908bd56450", null ],
+    [ "Prepare", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a7b8230680d41b72a9f23da964ba3ae8d", null ],
+    [ "ViewDisappeared", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a5b2206edab244bb959a08fb8fde5de34", null ],
+    [ "_instances", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a25f0b65d0cb5d4561e8df147e072c177", null ],
+    [ "_navigationService", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a267120bc73d1b9838eb76ab9227a76a2", null ],
+    [ "_selectedVideo", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a06a0a11366dca01e90bdf1a241967b33", null ],
+    [ "TIME_STEPS", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#abdb184f0447cdaee6a6a82da1b35546d", null ],
+    [ "DecrementVideoDurationCommand", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a234d2fecf08625b21631cf8d8ad2e4cc", null ],
+    [ "DecrementVideoStartTimeCommand", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a684a8ac0d092f001915ab76cd2bf789b", null ],
+    [ "ImportStimulusCommand", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a50763f560803830397d58efec99bf21b", null ],
+    [ "IncrementVideoDurationCommand", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a51681350cc4fd2a225d26875f38b7301", null ],
+    [ "IncrementVideoStartTimeCommand", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a947cabacfcd0996437fcd753ff985645", null ],
+    [ "Instances", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a35c14d82d8432a380b86ea6ca891ffa3", null ],
+    [ "SelectedVideo", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#afa036c252425928b4790eda8e111d212", null ],
+    [ "Stimuli", "classi_view_x_experiment_creator_1_1_core_1_1_view_models_1_1_video_editor_view_model.html#a31984d5d223faf947921f684cdf91d3d", null ]
+];

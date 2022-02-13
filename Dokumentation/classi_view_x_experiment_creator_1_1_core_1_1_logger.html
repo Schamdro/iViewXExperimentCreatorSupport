@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.2"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>iView X Experiment Creator: iViewXExperimentCreator.Core.Logger Klassenreferenz</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="appicon-small.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">iView X Experiment Creator
+   </div>
+   <div id="projectbrief">Anwendung zur Definition und Durchführung von Experimenten mit dem SMI iView X Hi Speed Eye Tracker</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.svg"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.9.2 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Suchen','.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classi_view_x_experiment_creator_1_1_core_1_1_logger.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-static-methods">Öffentliche, statische Methoden</a> &#124;
+<a href="#properties">Propertys</a> &#124;
+<a href="#pri-static-methods">Private, statische Methoden</a> &#124;
+<a href="#pri-static-attribs">Statische, private Attribute</a> &#124;
+<a href="classi_view_x_experiment_creator_1_1_core_1_1_logger-members.html">Aufstellung aller Elemente</a>  </div>
+  <div class="headertitle"><div class="title">iViewXExperimentCreator.Core.Logger Klassenreferenz</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht überall referenziert werden und es erlaubt Reformatierung in einer zentralen Klasse. Damit sind keine Code-Schnipsel, die mit Logging-Reformatierungen zu tun haben, wild im Code verstreut. Außerdem werden hier das Log-Directory und Log-Files erstellt.  
+ <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#details">Mehr ...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Öffentliche, statische Methoden</h2></td></tr>
+<tr class="memitem:a76403c202186a0c7bac9ed44383b106a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a76403c202186a0c7bac9ed44383b106a">Error</a> (Exception e, string message)</td></tr>
+<tr class="memdesc:a76403c202186a0c7bac9ed44383b106a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fehlernachricht. Wird mit [ERR] in der Log gekennzeichnet.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a76403c202186a0c7bac9ed44383b106a">Mehr ...</a><br /></td></tr>
+<tr class="separator:a76403c202186a0c7bac9ed44383b106a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f53168a5eb380cf49fe2698a0fdd665"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a2f53168a5eb380cf49fe2698a0fdd665">Message</a> (string message)</td></tr>
+<tr class="memdesc:a2f53168a5eb380cf49fe2698a0fdd665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Informationsnachricht. Wird mit [INF] in der Log gekennzeichnet.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a2f53168a5eb380cf49fe2698a0fdd665">Mehr ...</a><br /></td></tr>
+<tr class="separator:a2f53168a5eb380cf49fe2698a0fdd665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e68a9a400b04273b2786d8024138d06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7e68a9a400b04273b2786d8024138d06">Debug</a> (string message)</td></tr>
+<tr class="memdesc:a7e68a9a400b04273b2786d8024138d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debugnachricht. Wird mit [DBG] in der Log gekennzeichnet.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7e68a9a400b04273b2786d8024138d06">Mehr ...</a><br /></td></tr>
+<tr class="separator:a7e68a9a400b04273b2786d8024138d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99387395754fe47ac004d98dc1dc8e71"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a99387395754fe47ac004d98dc1dc8e71">StartInputLogger</a> (string logPath, string snapshotVersion)</td></tr>
+<tr class="memdesc:a99387395754fe47ac004d98dc1dc8e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Separater <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html" title="Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht über...">Logger</a>, welcher der Erstellung einer Versuchslog dient.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a99387395754fe47ac004d98dc1dc8e71">Mehr ...</a><br /></td></tr>
+<tr class="separator:a99387395754fe47ac004d98dc1dc8e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bdb3f2a9dbbfea80db8c55711140185"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7bdb3f2a9dbbfea80db8c55711140185">LogInput</a> (<a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a2c5f8d147902693e4d3c4fdb50366d01">PressedKey</a> input, string meaning, <a class="el" href="interfacei_view_x_experiment_creator_1_1_core_1_1_util_1_1_i_presentable.html">IPresentable</a> pres)</td></tr>
+<tr class="memdesc:a7bdb3f2a9dbbfea80db8c55711140185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loggt eine Eingabe und ihre zugewiesene Bedeutung in der momentanen Versuchslog.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7bdb3f2a9dbbfea80db8c55711140185">Mehr ...</a><br /></td></tr>
+<tr class="separator:a7bdb3f2a9dbbfea80db8c55711140185"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0284725c48a49bc5961d26dcf98d66"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a0f0284725c48a49bc5961d26dcf98d66">LogPresentableChange</a> (<a class="el" href="interfacei_view_x_experiment_creator_1_1_core_1_1_util_1_1_i_presentable.html">IPresentable</a> pres)</td></tr>
+<tr class="memdesc:a0f0284725c48a49bc5961d26dcf98d66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loggt die Änderung eines Präsentationselements in der momentanen Versuchslog..  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a0f0284725c48a49bc5961d26dcf98d66">Mehr ...</a><br /></td></tr>
+<tr class="separator:a0f0284725c48a49bc5961d26dcf98d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3e766cf44fe0eff3549579133f6658"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7e3e766cf44fe0eff3549579133f6658">DisposeInputLogger</a> ()</td></tr>
+<tr class="memdesc:a7e3e766cf44fe0eff3549579133f6658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gibt die Logger-Subroutine für die Versuchslog frei.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a7e3e766cf44fe0eff3549579133f6658">Mehr ...</a><br /></td></tr>
+<tr class="separator:a7e3e766cf44fe0eff3549579133f6658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
+Propertys</h2></td></tr>
+<tr class="memitem:abe12be6b98ac1d24654e1a53893dcf45"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#abe12be6b98ac1d24654e1a53893dcf45">LogPath</a><code> [getprivate set]</code></td></tr>
+<tr class="separator:abe12be6b98ac1d24654e1a53893dcf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+Private, statische Methoden</h2></td></tr>
+<tr class="memitem:ae267758c10175bd9034a3a405f329056"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#ae267758c10175bd9034a3a405f329056">Logger</a> ()</td></tr>
+<tr class="memdesc:ae267758c10175bd9034a3a405f329056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ein statischer Block, welcher den <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html" title="Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht über...">Logger</a> initialisiert, ohne dass von diesem je eine Instanz erstellt werden muss.  <a href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#ae267758c10175bd9034a3a405f329056">Mehr ...</a><br /></td></tr>
+<tr class="separator:ae267758c10175bd9034a3a405f329056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Statische, private Attribute</h2></td></tr>
+<tr class="memitem:a184008418b540095ce7f54ea013a9df2"><td class="memItemLeft" align="right" valign="top">const string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a184008418b540095ce7f54ea013a9df2">LOG_NAME_TIME_FORMAT</a> = &quot;dd-MM-yyyy--HH-mm-ss&quot;</td></tr>
+<tr class="separator:a184008418b540095ce7f54ea013a9df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874dea17694193fca969c2325e04d572"><td class="memItemLeft" align="right" valign="top">static Serilog.Core.Logger&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html#a874dea17694193fca969c2325e04d572">_inputLogger</a></td></tr>
+<tr class="separator:a874dea17694193fca969c2325e04d572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Ausführliche Beschreibung</h2>
+<div class="textblock"><p >Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht überall referenziert werden und es erlaubt Reformatierung in einer zentralen Klasse. Damit sind keine Code-Schnipsel, die mit Logging-Reformatierungen zu tun haben, wild im Code verstreut. Außerdem werden hier das Log-Directory und Log-Files erstellt. </p>
+</div><h2 class="groupheader">Beschreibung der Konstruktoren und Destruktoren</h2>
+<a id="ae267758c10175bd9034a3a405f329056" name="ae267758c10175bd9034a3a405f329056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae267758c10175bd9034a3a405f329056">&#9670;&nbsp;</a></span>Logger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static iViewXExperimentCreator.Core.Logger.Logger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ein statischer Block, welcher den <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html" title="Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht über...">Logger</a> initialisiert, ohne dass von diesem je eine Instanz erstellt werden muss. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Elementfunktionen</h2>
+<a id="a7e68a9a400b04273b2786d8024138d06" name="a7e68a9a400b04273b2786d8024138d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e68a9a400b04273b2786d8024138d06">&#9670;&nbsp;</a></span>Debug()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.Debug </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Debugnachricht. Wird mit [DBG] in der Log gekennzeichnet. </p>
+<p >Diese Nachricht wird NICHT in der Log ausgegeben, wenn das Programm in einer Release-Build ist. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7e3e766cf44fe0eff3549579133f6658" name="a7e3e766cf44fe0eff3549579133f6658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3e766cf44fe0eff3549579133f6658">&#9670;&nbsp;</a></span>DisposeInputLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.DisposeInputLogger </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gibt die Logger-Subroutine für die Versuchslog frei. </p>
+
+</div>
+</div>
+<a id="a76403c202186a0c7bac9ed44383b106a" name="a76403c202186a0c7bac9ed44383b106a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76403c202186a0c7bac9ed44383b106a">&#9670;&nbsp;</a></span>Error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.Error </td>
+          <td>(</td>
+          <td class="paramtype">Exception&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fehlernachricht. Wird mit [ERR] in der Log gekennzeichnet. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td></td></tr>
+    <tr><td class="paramname">message</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7bdb3f2a9dbbfea80db8c55711140185" name="a7bdb3f2a9dbbfea80db8c55711140185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bdb3f2a9dbbfea80db8c55711140185">&#9670;&nbsp;</a></span>LogInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.LogInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacei_view_x_experiment_creator_1_1_core_1_1_enums.html#a2c5f8d147902693e4d3c4fdb50366d01">PressedKey</a>&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>meaning</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="interfacei_view_x_experiment_creator_1_1_core_1_1_util_1_1_i_presentable.html">IPresentable</a>&#160;</td>
+          <td class="paramname"><em>pres</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loggt eine Eingabe und ihre zugewiesene Bedeutung in der momentanen Versuchslog. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">meaning</td><td></td></tr>
+    <tr><td class="paramname">pres</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f0284725c48a49bc5961d26dcf98d66" name="a0f0284725c48a49bc5961d26dcf98d66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0284725c48a49bc5961d26dcf98d66">&#9670;&nbsp;</a></span>LogPresentableChange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.LogPresentableChange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="interfacei_view_x_experiment_creator_1_1_core_1_1_util_1_1_i_presentable.html">IPresentable</a>&#160;</td>
+          <td class="paramname"><em>pres</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loggt die Änderung eines Präsentationselements in der momentanen Versuchslog.. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pres</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f53168a5eb380cf49fe2698a0fdd665" name="a2f53168a5eb380cf49fe2698a0fdd665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f53168a5eb380cf49fe2698a0fdd665">&#9670;&nbsp;</a></span>Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.Message </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Informationsnachricht. Wird mit [INF] in der Log gekennzeichnet. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99387395754fe47ac004d98dc1dc8e71" name="a99387395754fe47ac004d98dc1dc8e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99387395754fe47ac004d98dc1dc8e71">&#9670;&nbsp;</a></span>StartInputLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iViewXExperimentCreator.Core.Logger.StartInputLogger </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>logPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>snapshotVersion</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Separater <a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html" title="Dient als Preprocessor, vor Informationen an Serilog weitergegeben werden. So muss Serilog nicht über...">Logger</a>, welcher der Erstellung einer Versuchslog dient. </p>
+<dl class="params"><dt>Parameter</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logPath</td><td></td></tr>
+    <tr><td class="paramname">snapshotVersion</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Datenelemente</h2>
+<a id="a874dea17694193fca969c2325e04d572" name="a874dea17694193fca969c2325e04d572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874dea17694193fca969c2325e04d572">&#9670;&nbsp;</a></span>_inputLogger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Serilog.Core.Logger iViewXExperimentCreator.Core.Logger._inputLogger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a184008418b540095ce7f54ea013a9df2" name="a184008418b540095ce7f54ea013a9df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a184008418b540095ce7f54ea013a9df2">&#9670;&nbsp;</a></span>LOG_NAME_TIME_FORMAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const string iViewXExperimentCreator.Core.Logger.LOG_NAME_TIME_FORMAT = &quot;dd-MM-yyyy--HH-mm-ss&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentation der Propertys</h2>
+<a id="abe12be6b98ac1d24654e1a53893dcf45" name="abe12be6b98ac1d24654e1a53893dcf45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe12be6b98ac1d24654e1a53893dcf45">&#9670;&nbsp;</a></span>LogPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string iViewXExperimentCreator.Core.Logger.LogPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Die Dokumentation für diese Klasse wurde erzeugt aufgrund der Datei:<ul>
+<li>C:/Users/nussh/Documents/Studium/Bachelorarbeit/Repo/iViewX-Experiment-Creator/iViewXExperimentCreator/iViewXExperimentCreator.Core/<a class="el" href="_logger_8cs.html">Logger.cs</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacei_view_x_experiment_creator.html">iViewXExperimentCreator</a></li><li class="navelem"><a class="el" href="namespacei_view_x_experiment_creator_1_1_core.html">Core</a></li><li class="navelem"><a class="el" href="classi_view_x_experiment_creator_1_1_core_1_1_logger.html">Logger</a></li>
+    <li class="footer">Erzeugt von <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
+  </ul>
+</div>
+</body>
+</html>
